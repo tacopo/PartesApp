@@ -1,0 +1,38 @@
+/* Estilos generales para todas las pantallas */
+.iniciarSesion{
+  display: flex !important;
+  justify-content: end !important;
+  align-items: center !important;
+  padding: 1% !important; 
+  mat-form-field{
+    padding: 1% !important;
+  }
+}
+/* Estilos para pantallas más pequeñas que 600px */
+@media (max-width: 600px) {
+  mat-toolbar{
+    display: flex !important;
+    flex-direction: column !important;
+
+
+  }
+}
+
+/* Estilos para pantallas entre 600px y 900px */
+@media (min-width: 600px) and (max-width: 899px) {
+  mat-toolbar{
+    display: flex !important;
+    flex-direction: column !important;
+
+  }
+}
+/* Estilos para pantallas más grandes que 900px */
+@media (min-width: 900px) {
+  mat-toolbar{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+  }
+}

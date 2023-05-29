@@ -1,0 +1,41 @@
+<mat-toolbar>
+  <div class="app">
+    <h1>PartesApp</h1>
+  </div>
+
+  <div *ngIf="!usuarioCorrecto" class="iniciarSesion">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input
+        matInput
+        placeholder="Enter your username"
+        name="usuario"
+        [(ngModel)]="userName"
+        (keyup.enter)="comprobarUsuario()"
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Enter your password"
+        name="password"
+        [(ngModel)]="pass"
+        (keyup.enter)="comprobarUsuario()"
+      />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="comprobarUsuario()">
+      Login
+    </button>
+  </div>
+  <div *ngIf="usuarioCorrecto" class="iniciarSesion">
+    <h1>Bienvenido {{ usuarioRegistrado }}</h1>
+
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon" (click)="deleteAllCookies()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
