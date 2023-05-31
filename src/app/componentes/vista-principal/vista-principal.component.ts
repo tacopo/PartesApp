@@ -24,6 +24,7 @@ export class VistaPrincipalComponent {
   fechaSeleccionada="";
   motivos="";
   idProfesor="";
+  idAlumnoSeleccionado="";
 
   constructor(private http: HttpClient){
     this.getGrupos();
@@ -43,7 +44,7 @@ export class VistaPrincipalComponent {
       });
   }
   cambioGrupo(){
-    this.idSeleccionado=this.opcionSeleccionada.split(":")[0]
+    this.idSeleccionado=this.opcionSeleccionada.split(":")[0];
     console.log(this.idSeleccionado);
     this.isGrupoSelected=true;
     this.getAlumnosdelGrupo();
@@ -69,13 +70,21 @@ export class VistaPrincipalComponent {
 
   ponerParte(){
     this.idProfesor=this.getIDCookieValue();
+    this.idAlumnoSeleccionado=this.alumnoSeleccionado.split(":")[0];
+
     console.log("profesor: "+ this.idProfesor);
-    console.log("alumno: "+this.idSeleccionado);
+    console.log("alumno: "+this.idAlumnoSeleccionado);
     console.log("tipo parte "+this.parteSeleccionado);
     console.log("fecha parte "+this.fechaSeleccionada);
     console.log("Motivo "+this.motivos);
-    alert("parte guardado");
-    location.reload();
+
+    if(this.idProfesor!="" && this.idAlumnoSeleccionado!="" && this.parteSeleccionado!="" && this.fechaSeleccionada!="" && this.motivos!=""){
+      alert("parte guardado");
+      location.reload();
+    }else{
+      alert("Complete todos los campos para continuar")
+    }
+
   }
 
   getIDCookieValue(): string | null {

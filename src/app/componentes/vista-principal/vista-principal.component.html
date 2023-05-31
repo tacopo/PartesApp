@@ -2,7 +2,7 @@
   <h2>Nuevo parte</h2>
 
   <mat-form-field class="example-full-width">
-    <mat-label>Grupo</mat-label>
+    <mat-label>Grupo*</mat-label>
     <input type="text"
            placeholder="Selecciona una clase"
            aria-label="Clase"
@@ -22,7 +22,7 @@
 
 <div class="container" *ngIf="isGrupoSelected">
   <mat-form-field class="example-full-width">
-    <mat-label>Alumno</mat-label>
+    <mat-label>Alumno*</mat-label>
     <input type="text"
            placeholder="Selecciona un alumno"
            aria-label="alumno"
@@ -38,15 +38,15 @@
     </mat-autocomplete >
   </mat-form-field>
 
-  <h3>Tipo de parte: </h3>
-  <mat-radio-group aria-label="Select an option" [(ngModel)]="parteSeleccionado">
+  <h3>Tipo de parte*: </h3>
+  <mat-radio-group aria-label="Tipo de parte" [(ngModel)]="parteSeleccionado">
     <mat-radio-button *ngFor="let option of tipoParte" value="{{option}}">{{option}}</mat-radio-button>
 
   </mat-radio-group>
 
   <div class="container">
     <mat-form-field>
-      <mat-label>Choose a date</mat-label>
+      <mat-label>Choose a date*</mat-label>
       <input matInput [matDatepicker]="picker" [(ngModel)]="fechaSeleccionada">
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -55,7 +55,7 @@
 
 
     <mat-form-field class="motivos">
-      <mat-label>Describe los motivos</mat-label>
+      <mat-label>Describe los motivos*</mat-label>
       <textarea matInput placeholder="Impongo el parte por los siguientes motivos...." [(ngModel)]="motivos"></textarea>
     </mat-form-field>
   </div>
