@@ -34,8 +34,15 @@
   <div *ngIf="usuarioCorrecto" class="iniciarSesion">
     <h1>Bienvenido {{ usuarioRegistrado }}</h1>
 
-    <button mat-mini-fab color="primary" aria-label="Example icon button with a delete icon" (click)="deleteAllCookies()">
+    <button
+      mat-mini-fab
+      color="primary"
+      aria-label="Example icon button with a delete icon"
+      (click)="deleteAllCookies()"
+    >
       <mat-icon>logout</mat-icon>
     </button>
   </div>
 </mat-toolbar>
+<app-home *ngIf="!usuarioCorrecto"></app-home>
+<app-vista-principal *ngIf="usuarioCorrecto"></app-vista-principal>

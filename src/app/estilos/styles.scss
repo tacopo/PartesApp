@@ -2,18 +2,55 @@
 .iniciarSesion{
   display: flex !important;
   justify-content: end !important;
-  align-items: center !important;
-  padding: 1% !important; 
+  align-items: baseline !important;
+  padding: 1% !important;
   mat-form-field{
     padding: 1% !important;
   }
+  .button{
+    padding: 1%;
+  }
+
+}
+
+.container{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10%;
+  padding-left: 12.5%;
+  padding-right: 12.5%;
+}
+.mat-mdc-card{
+  width: 25%;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+mat-toolbar{
+  height: fit-content !important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled){
+  background-color: white;;
+}
+
+.tarjetaInicioSesion{
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column !important;
+}
+
+.motivos{
+  width: 100% !important;
+  height: 50%;
 }
 /* Estilos para pantallas más pequeñas que 600px */
 @media (max-width: 600px) {
   mat-toolbar{
     display: flex !important;
     flex-direction: column !important;
-
 
   }
 }

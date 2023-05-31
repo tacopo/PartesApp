@@ -1,0 +1,68 @@
+<div class="container">
+  <h2>Nuevo parte</h2>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Grupo</mat-label>
+    <input type="text"
+           placeholder="Selecciona una clase"
+           aria-label="Clase"
+           matInput
+           [matAutocomplete]="auto"
+           [(ngModel)]="opcionSeleccionada"
+           >
+    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="cambioGrupo()">
+      <mat-option *ngFor="let option of options "[value]="option.id+': '+option.Curso+' '+option.Grupo" >
+        {{option.id}}: {{option.Curso}} {{option.Grupo.toUpperCase()}}
+      </mat-option>
+    </mat-autocomplete >
+  </mat-form-field>
+
+
+</div>
+
+<div class="container" *ngIf="isGrupoSelected">
+  <mat-form-field class="example-full-width">
+    <mat-label>Alumno</mat-label>
+    <input type="text"
+           placeholder="Selecciona un alumno"
+           aria-label="alumno"
+           matInput
+           [matAutocomplete]="auto"
+           [(ngModel)]="alumnoSeleccionado"
+
+           >
+    <mat-autocomplete #auto="matAutocomplete"  (optionSelected)="verAlumnoSeleccionado()">
+      <mat-option *ngFor="let option of alumnosParaAutocomplete "[value]="option.ID+': '+option.Nombre+' '+option.Apellido "  >
+        {{option.Nombre}} {{option.Apellido}}
+      </mat-option>
+    </mat-autocomplete >
+  </mat-form-field>
+
+  <h3>Tipo de parte: </h3>
+  <mat-radio-group aria-label="Select an option" [(ngModel)]="parteSeleccionado">
+    <mat-radio-button *ngFor="let option of tipoParte" value="{{option}}">{{option}}</mat-radio-button>
+
+  </mat-radio-group>
+
+  <div class="container">
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="fechaSeleccionada">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-form-field class="motivos">
+      <mat-label>Describe los motivos</mat-label>
+      <textarea matInput placeholder="Impongo el parte por los siguientes motivos...." [(ngModel)]="motivos"></textarea>
+    </mat-form-field>
+  </div>
+
+
+  <button mat-fab color="primary" (click)="ponerParte()">
+    <mat-icon>balance</mat-icon>
+  </button>
+</div>
+

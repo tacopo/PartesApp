@@ -11,13 +11,17 @@ import { LoginComponent } from './componentes/login/login.component';
 import { MaterialModule } from './modules/material/material.module';
 import { HomeComponent } from './componentes/home/home.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { VistaPrincipalComponent } from './componentes/vista-principal/vista-principal.component';
+import {MatNativeDateModule} from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    VistaPrincipalComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +30,7 @@ import { NavbarComponent } from './componentes/navbar/navbar.component';
     MaterialModule,
     HttpClientModule,
     FormsModule,
+    MatNativeDateModule,
 
   ],
   providers: [],

@@ -1,3 +1,10 @@
 @import 'app/estilos/styles.scss';
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+.fondo{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .2;
+}

@@ -49,6 +49,7 @@ export class NavbarComponent {
           console.log(this.datos);
           this.createCookie(this.datos[0].Usuario);
           this.createCookieID(this.datos[0].ID)
+          window.location.href=environment.rutaVistaPrincipal;
         } else {
           console.log('error');
           alert("nombre de usuario o contraseña incorrecta");
@@ -137,6 +138,7 @@ export class NavbarComponent {
 
   deleteAllCookies() {
     const cookies = document.cookie.split(";");
+    window.location.href = environment.rutaInicio;
 
     for (let i = 0; i < cookies.length; i++) {
       const cookie = cookies[i];
