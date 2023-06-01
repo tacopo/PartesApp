@@ -11,6 +11,8 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [],
@@ -28,7 +30,11 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatAutocompleteModule,
     MatRadioModule,
     MatDatepickerModule,
-    
+    MatTabsModule,
+    MatTableModule,
+
+
+
   ]
 })
 export class MaterialModule { }

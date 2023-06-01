@@ -13,6 +13,7 @@ import { HomeComponent } from './componentes/home/home.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { VistaPrincipalComponent } from './componentes/vista-principal/vista-principal.component';
 import {MatNativeDateModule} from '@angular/material/core';
+import { TablaPartesComponent } from './componentes/tabla-partes/tabla-partes.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MatNativeDateModule} from '@angular/material/core';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    VistaPrincipalComponent
+    VistaPrincipalComponent,
+    TablaPartesComponent
   ],
   imports: [
     BrowserModule,
